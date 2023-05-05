@@ -230,6 +230,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=63]
 resource_name = "pesca_exitosa"
 length = 0.9
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("personaje/emoticonos:frame")
 tracks/0/interp = 1

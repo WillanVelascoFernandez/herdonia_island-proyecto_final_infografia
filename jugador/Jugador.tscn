@@ -88,34 +88,6 @@ tracks/5/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=63]
-resource_name = "alerta"
-length = 0.9
-tracks/0/type = "value"
-tracks/0/path = NodePath("personaje/emoticonos:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 1 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("personaje/emoticonos:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true, false, true, false, true, false, true, false ]
-}
-
 [sub_resource type="Animation" id=5]
 resource_name = "caminar_abajo"
 length = 0.7
@@ -253,6 +225,34 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 64, 66, 64, 66, 67, 68, 67, 68, 67, 72, 73, 72, 73, 72, 67, 74, 75, 74, 75, 74, 67, 66 ]
+}
+
+[sub_resource type="Animation" id=63]
+resource_name = "pesca_exitosa"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("personaje/emoticonos:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("personaje/emoticonos:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false, true, false ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -534,9 +534,6 @@ tracks/0/keys = {
 [sub_resource type="AnimationNodeAnimation" id=23]
 animation = "RESET"
 
-[sub_resource type="AnimationNodeAnimation" id=64]
-animation = "alerta"
-
 [sub_resource type="AnimationNodeAnimation" id=16]
 animation = "caminar_abajo"
 
@@ -554,6 +551,9 @@ animation = "error_pesca"
 
 [sub_resource type="AnimationNodeAnimation" id=14]
 animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=64]
+animation = "pesca_exitosa"
 
 [sub_resource type="AnimationNodeAnimation" id=19]
 animation = "pescar_abajo"
@@ -644,14 +644,10 @@ auto_advance = true
 [sub_resource type="AnimationNodeStateMachineTransition" id=65]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=66]
-switch_mode = 2
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachine" id=2]
 states/RESET/node = SubResource( 23 )
 states/RESET/position = Vector2( 451, 104.937 )
-states/alerta/node = SubResource( 64 )
-states/alerta/position = Vector2( 649, -40.7449 )
 states/caminar_abajo/node = SubResource( 16 )
 states/caminar_abajo/position = Vector2( 822.111, 266.999 )
 states/caminar_arriba/node = SubResource( 17 )
@@ -664,6 +660,8 @@ states/error_pesca/node = SubResource( 60 )
 states/error_pesca/position = Vector2( 518.333, -78.0782 )
 states/idle/node = SubResource( 14 )
 states/idle/position = Vector2( 791.807, 75 )
+states/pesca_exitosa/node = SubResource( 64 )
+states/pesca_exitosa/position = Vector2( 703.667, -40.7449 )
 states/pescar_abajo/node = SubResource( 19 )
 states/pescar_abajo/position = Vector2( 105.667, 11.6656 )
 states/pescar_arriba/node = SubResource( 20 )
@@ -680,9 +678,9 @@ states/recoger_pescar_derecha/node = SubResource( 55 )
 states/recoger_pescar_derecha/position = Vector2( 423.667, 388.922 )
 states/recoger_pescar_izquierda/node = SubResource( 50 )
 states/recoger_pescar_izquierda/position = Vector2( 168.333, 235.588 )
-transitions = [ "RESET", "idle", SubResource( 24 ), "RESET", "caminar_arriba", SubResource( 25 ), "RESET", "caminar_abajo", SubResource( 26 ), "RESET", "caminar_izquierda", SubResource( 27 ), "RESET", "caminar_derecha", SubResource( 28 ), "RESET", "pescar_derecha", SubResource( 29 ), "RESET", "pescar_izquierda", SubResource( 30 ), "RESET", "pescar_abajo", SubResource( 31 ), "RESET", "pescar_arriba", SubResource( 32 ), "idle", "RESET", SubResource( 33 ), "caminar_arriba", "RESET", SubResource( 34 ), "caminar_abajo", "RESET", SubResource( 35 ), "caminar_izquierda", "RESET", SubResource( 36 ), "caminar_derecha", "RESET", SubResource( 37 ), "pescar_derecha", "RESET", SubResource( 38 ), "pescar_izquierda", "RESET", SubResource( 39 ), "pescar_abajo", "RESET", SubResource( 40 ), "pescar_abajo", "recoger_pescar_abajo", SubResource( 43 ), "recoger_pescar_abajo", "RESET", SubResource( 44 ), "pescar_arriba", "recoger_pescar_arriba", SubResource( 51 ), "recoger_pescar_arriba", "RESET", SubResource( 52 ), "pescar_izquierda", "recoger_pescar_izquierda", SubResource( 53 ), "recoger_pescar_izquierda", "RESET", SubResource( 54 ), "pescar_derecha", "recoger_pescar_derecha", SubResource( 56 ), "recoger_pescar_derecha", "RESET", SubResource( 57 ), "RESET", "error_pesca", SubResource( 61 ), "error_pesca", "RESET", SubResource( 62 ), "RESET", "alerta", SubResource( 65 ), "alerta", "RESET", SubResource( 66 ) ]
+transitions = [ "RESET", "idle", SubResource( 24 ), "RESET", "caminar_arriba", SubResource( 25 ), "RESET", "caminar_abajo", SubResource( 26 ), "RESET", "caminar_izquierda", SubResource( 27 ), "RESET", "caminar_derecha", SubResource( 28 ), "RESET", "pescar_derecha", SubResource( 29 ), "RESET", "pescar_izquierda", SubResource( 30 ), "RESET", "pescar_abajo", SubResource( 31 ), "RESET", "pescar_arriba", SubResource( 32 ), "idle", "RESET", SubResource( 33 ), "caminar_arriba", "RESET", SubResource( 34 ), "caminar_abajo", "RESET", SubResource( 35 ), "caminar_izquierda", "RESET", SubResource( 36 ), "caminar_derecha", "RESET", SubResource( 37 ), "pescar_derecha", "RESET", SubResource( 38 ), "pescar_izquierda", "RESET", SubResource( 39 ), "pescar_abajo", "RESET", SubResource( 40 ), "pescar_abajo", "recoger_pescar_abajo", SubResource( 43 ), "recoger_pescar_abajo", "RESET", SubResource( 44 ), "pescar_arriba", "recoger_pescar_arriba", SubResource( 51 ), "recoger_pescar_arriba", "RESET", SubResource( 52 ), "pescar_izquierda", "recoger_pescar_izquierda", SubResource( 53 ), "recoger_pescar_izquierda", "RESET", SubResource( 54 ), "pescar_derecha", "recoger_pescar_derecha", SubResource( 56 ), "recoger_pescar_derecha", "RESET", SubResource( 57 ), "RESET", "error_pesca", SubResource( 61 ), "error_pesca", "RESET", SubResource( 62 ), "RESET", "pesca_exitosa", SubResource( 65 ), "pesca_exitosa", "RESET", SubResource( 66 ) ]
 start_node = "RESET"
-graph_offset = Vector2( -86, -142.412 )
+graph_offset = Vector2( -47, -71.4115 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 
@@ -711,13 +709,13 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 4 )
-anims/alerta = SubResource( 63 )
 anims/caminar_abajo = SubResource( 5 )
 anims/caminar_arriba = SubResource( 6 )
 anims/caminar_derecha = SubResource( 7 )
 anims/caminar_izquierda = SubResource( 8 )
 anims/error_pesca = SubResource( 59 )
 anims/idle = SubResource( 10 )
+anims/pesca_exitosa = SubResource( 63 )
 anims/pescar_abajo = SubResource( 9 )
 anims/pescar_arriba = SubResource( 11 )
 anims/pescar_derecha = SubResource( 12 )

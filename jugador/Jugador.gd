@@ -108,7 +108,9 @@ func _on_fish_body_entered(body):
 func _on_tiempo_espera_timeout():
 	if fish==true:
 		Global.dinero(randi() % 10 + 3 )
-	fish=false
+	#fish=false
+	state_machine.travel("pesca_exitosa")
 	$tiempo_espera.stop()
+	
 	pass
 

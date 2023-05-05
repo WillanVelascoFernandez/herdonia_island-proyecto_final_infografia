@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://sprites/personaje/personaje_completo.png" type="Texture" id=1]
 [ext_resource path="res://jugador/Jugador.gd" type="Script" id=2]
@@ -74,6 +74,46 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("personaje/emoticonos:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=63]
+resource_name = "alerta"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("personaje/emoticonos:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("personaje/emoticonos:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false, true, false ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -494,6 +534,9 @@ tracks/0/keys = {
 [sub_resource type="AnimationNodeAnimation" id=23]
 animation = "RESET"
 
+[sub_resource type="AnimationNodeAnimation" id=64]
+animation = "alerta"
+
 [sub_resource type="AnimationNodeAnimation" id=16]
 animation = "caminar_abajo"
 
@@ -598,9 +641,17 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=62]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=65]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=66]
+switch_mode = 2
+auto_advance = true
+
 [sub_resource type="AnimationNodeStateMachine" id=2]
 states/RESET/node = SubResource( 23 )
 states/RESET/position = Vector2( 451, 104.937 )
+states/alerta/node = SubResource( 64 )
+states/alerta/position = Vector2( 649, -40.7449 )
 states/caminar_abajo/node = SubResource( 16 )
 states/caminar_abajo/position = Vector2( 822.111, 266.999 )
 states/caminar_arriba/node = SubResource( 17 )
@@ -629,7 +680,7 @@ states/recoger_pescar_derecha/node = SubResource( 55 )
 states/recoger_pescar_derecha/position = Vector2( 423.667, 388.922 )
 states/recoger_pescar_izquierda/node = SubResource( 50 )
 states/recoger_pescar_izquierda/position = Vector2( 168.333, 235.588 )
-transitions = [ "RESET", "idle", SubResource( 24 ), "RESET", "caminar_arriba", SubResource( 25 ), "RESET", "caminar_abajo", SubResource( 26 ), "RESET", "caminar_izquierda", SubResource( 27 ), "RESET", "caminar_derecha", SubResource( 28 ), "RESET", "pescar_derecha", SubResource( 29 ), "RESET", "pescar_izquierda", SubResource( 30 ), "RESET", "pescar_abajo", SubResource( 31 ), "RESET", "pescar_arriba", SubResource( 32 ), "idle", "RESET", SubResource( 33 ), "caminar_arriba", "RESET", SubResource( 34 ), "caminar_abajo", "RESET", SubResource( 35 ), "caminar_izquierda", "RESET", SubResource( 36 ), "caminar_derecha", "RESET", SubResource( 37 ), "pescar_derecha", "RESET", SubResource( 38 ), "pescar_izquierda", "RESET", SubResource( 39 ), "pescar_abajo", "RESET", SubResource( 40 ), "pescar_abajo", "recoger_pescar_abajo", SubResource( 43 ), "recoger_pescar_abajo", "RESET", SubResource( 44 ), "pescar_arriba", "recoger_pescar_arriba", SubResource( 51 ), "recoger_pescar_arriba", "RESET", SubResource( 52 ), "pescar_izquierda", "recoger_pescar_izquierda", SubResource( 53 ), "recoger_pescar_izquierda", "RESET", SubResource( 54 ), "pescar_derecha", "recoger_pescar_derecha", SubResource( 56 ), "recoger_pescar_derecha", "RESET", SubResource( 57 ), "RESET", "error_pesca", SubResource( 61 ), "error_pesca", "RESET", SubResource( 62 ) ]
+transitions = [ "RESET", "idle", SubResource( 24 ), "RESET", "caminar_arriba", SubResource( 25 ), "RESET", "caminar_abajo", SubResource( 26 ), "RESET", "caminar_izquierda", SubResource( 27 ), "RESET", "caminar_derecha", SubResource( 28 ), "RESET", "pescar_derecha", SubResource( 29 ), "RESET", "pescar_izquierda", SubResource( 30 ), "RESET", "pescar_abajo", SubResource( 31 ), "RESET", "pescar_arriba", SubResource( 32 ), "idle", "RESET", SubResource( 33 ), "caminar_arriba", "RESET", SubResource( 34 ), "caminar_abajo", "RESET", SubResource( 35 ), "caminar_izquierda", "RESET", SubResource( 36 ), "caminar_derecha", "RESET", SubResource( 37 ), "pescar_derecha", "RESET", SubResource( 38 ), "pescar_izquierda", "RESET", SubResource( 39 ), "pescar_abajo", "RESET", SubResource( 40 ), "pescar_abajo", "recoger_pescar_abajo", SubResource( 43 ), "recoger_pescar_abajo", "RESET", SubResource( 44 ), "pescar_arriba", "recoger_pescar_arriba", SubResource( 51 ), "recoger_pescar_arriba", "RESET", SubResource( 52 ), "pescar_izquierda", "recoger_pescar_izquierda", SubResource( 53 ), "recoger_pescar_izquierda", "RESET", SubResource( 54 ), "pescar_derecha", "recoger_pescar_derecha", SubResource( 56 ), "recoger_pescar_derecha", "RESET", SubResource( 57 ), "RESET", "error_pesca", SubResource( 61 ), "error_pesca", "RESET", SubResource( 62 ), "RESET", "alerta", SubResource( 65 ), "alerta", "RESET", SubResource( 66 ) ]
 start_node = "RESET"
 graph_offset = Vector2( -86, -142.412 )
 
@@ -651,7 +702,7 @@ position = Vector2( 10, -9 )
 texture = ExtResource( 3 )
 hframes = 5
 vframes = 6
-frame = 2
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -660,6 +711,7 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 4 )
+anims/alerta = SubResource( 63 )
 anims/caminar_abajo = SubResource( 5 )
 anims/caminar_arriba = SubResource( 6 )
 anims/caminar_derecha = SubResource( 7 )
@@ -704,7 +756,8 @@ shape = SubResource( 58 )
 disabled = true
 one_way_collision_margin = 0.0
 
-[node name="tiempo_pesca" type="Timer" parent="."]
+[node name="tiempo_espera" type="Timer" parent="."]
+wait_time = 5.0
 
 [connection signal="body_entered" from="Position2D/fish" to="." method="_on_fish_body_entered"]
-[connection signal="timeout" from="tiempo_pesca" to="." method="_on_tiempo_pesca_timeout"]
+[connection signal="timeout" from="tiempo_espera" to="." method="_on_tiempo_espera_timeout"]

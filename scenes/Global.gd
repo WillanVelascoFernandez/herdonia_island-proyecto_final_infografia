@@ -7,6 +7,6 @@ signal update_dinero
 func _ready():
 	pass
 	
-func dinero():
-	dinero +=1
+func dinero(d):
+	dinero +=d
 	emit_signal("update_dinero",dinero)

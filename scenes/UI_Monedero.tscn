@@ -19,7 +19,6 @@ rect_scale = Vector2( 2, 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_styles/normal = SubResource( 1 )
-text = "ew"
 align = 1
 valign = 1
 percent_visible = -0.5

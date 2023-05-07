@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://sprites/personaje/personaje_completo.png" type="Texture" id=1]
 [ext_resource path="res://jugador/Jugador.gd" type="Script" id=2]
@@ -227,35 +227,6 @@ tracks/0/keys = {
 "values": [ 64, 66, 64, 66, 67, 68, 67, 68, 67, 72, 73, 72, 73, 72, 67, 74, 75, 74, 75, 74, 67, 66 ]
 }
 
-[sub_resource type="Animation" id=63]
-resource_name = "pesca_exitosa"
-length = 0.9
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("personaje/emoticonos:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 4 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("personaje/emoticonos:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true, false, true, false, true, false, true, false ]
-}
-
 [sub_resource type="Animation" id=9]
 resource_name = "pescar_abajo"
 length = 0.6
@@ -309,6 +280,83 @@ tracks/3/keys = {
 "values": [ SubResource( 58 ) ]
 }
 
+[sub_resource type="Animation" id=63]
+resource_name = "pescar_abajo_exitosa"
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("personaje/emoticonos:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 30 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("personaje:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 36 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("personaje/emoticonos:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position2D/fish/CollisionShape2D:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 58 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Position2D/fish/CollisionShape2D:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Position2D/fish/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
 [sub_resource type="Animation" id=11]
 resource_name = "pescar_arriba"
 length = 0.75
@@ -356,6 +404,83 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 58 ) ]
+}
+
+[sub_resource type="Animation" id=67]
+resource_name = "pescar_arriba_exitosa"
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("personaje/emoticonos:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 30 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("personaje:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 41 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("personaje/emoticonos:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position2D/fish/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Position2D/fish/CollisionShape2D:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 180.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Position2D/fish/CollisionShape2D:shape")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -415,6 +540,83 @@ tracks/3/keys = {
 "values": [ SubResource( 58 ) ]
 }
 
+[sub_resource type="Animation" id=68]
+resource_name = "pescar_derecha_exitosa"
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("personaje/emoticonos:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 30 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("personaje:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 52 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("personaje/emoticonos:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position2D/fish/CollisionShape2D:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 58 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Position2D/fish/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Position2D/fish/CollisionShape2D:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 270.0 ]
+}
+
 [sub_resource type="Animation" id=13]
 resource_name = "pescar_izquierda"
 length = 0.6
@@ -466,6 +668,83 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ SubResource( 58 ) ]
+}
+
+[sub_resource type="Animation" id=69]
+resource_name = "pescar_izquierda_exitosa"
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("personaje/emoticonos:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 30 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("personaje:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 60 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("personaje/emoticonos:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Position2D/fish/CollisionShape2D:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 58 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Position2D/fish/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Position2D/fish/CollisionShape2D:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 89.9999 ]
 }
 
 [sub_resource type="Animation" id=41]
@@ -553,20 +832,29 @@ animation = "error_pesca"
 [sub_resource type="AnimationNodeAnimation" id=14]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=64]
-animation = "pesca_exitosa"
-
 [sub_resource type="AnimationNodeAnimation" id=19]
 animation = "pescar_abajo"
+
+[sub_resource type="AnimationNodeAnimation" id=70]
+animation = "pescar_abajo_exitosa"
 
 [sub_resource type="AnimationNodeAnimation" id=20]
 animation = "pescar_arriba"
 
+[sub_resource type="AnimationNodeAnimation" id=71]
+animation = "pescar_arriba_exitosa"
+
 [sub_resource type="AnimationNodeAnimation" id=21]
 animation = "pescar_derecha"
 
+[sub_resource type="AnimationNodeAnimation" id=72]
+animation = "pescar_derecha_exitosa"
+
 [sub_resource type="AnimationNodeAnimation" id=22]
 animation = "pescar_izquierda"
+
+[sub_resource type="AnimationNodeAnimation" id=73]
+animation = "pescar_izquierda_exitosa"
 
 [sub_resource type="AnimationNodeAnimation" id=42]
 animation = "recoger_pescar_abajo"
@@ -642,9 +930,21 @@ auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=62]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=65]
+[sub_resource type="AnimationNodeStateMachineTransition" id=74]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=66]
+[sub_resource type="AnimationNodeStateMachineTransition" id=75]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=76]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=77]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=78]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=79]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=80]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=81]
 
 [sub_resource type="AnimationNodeStateMachine" id=2]
 states/RESET/node = SubResource( 23 )
@@ -661,16 +961,22 @@ states/error_pesca/node = SubResource( 60 )
 states/error_pesca/position = Vector2( 518.333, -78.0782 )
 states/idle/node = SubResource( 14 )
 states/idle/position = Vector2( 791.807, 75 )
-states/pesca_exitosa/node = SubResource( 64 )
-states/pesca_exitosa/position = Vector2( 703.667, -40.7449 )
 states/pescar_abajo/node = SubResource( 19 )
 states/pescar_abajo/position = Vector2( 105.667, 11.6656 )
+states/pescar_abajo_exitosa/node = SubResource( 70 )
+states/pescar_abajo_exitosa/position = Vector2( -159, 29.2552 )
 states/pescar_arriba/node = SubResource( 20 )
 states/pescar_arriba/position = Vector2( 276.679, -96.6312 )
+states/pescar_arriba_exitosa/node = SubResource( 71 )
+states/pescar_arriba_exitosa/position = Vector2( 149.667, -176.411 )
 states/pescar_derecha/node = SubResource( 21 )
 states/pescar_derecha/position = Vector2( 293.667, 312.406 )
+states/pescar_derecha_exitosa/node = SubResource( 72 )
+states/pescar_derecha_exitosa/position = Vector2( 125.667, 407.532 )
 states/pescar_izquierda/node = SubResource( 22 )
 states/pescar_izquierda/position = Vector2( 157.222, 172.21 )
+states/pescar_izquierda_exitosa/node = SubResource( 73 )
+states/pescar_izquierda_exitosa/position = Vector2( -132.333, 195.922 )
 states/recoger_pescar_abajo/node = SubResource( 42 )
 states/recoger_pescar_abajo/position = Vector2( 95.3333, 85.2551 )
 states/recoger_pescar_arriba/node = SubResource( 49 )
@@ -679,9 +985,9 @@ states/recoger_pescar_derecha/node = SubResource( 55 )
 states/recoger_pescar_derecha/position = Vector2( 423.667, 388.922 )
 states/recoger_pescar_izquierda/node = SubResource( 50 )
 states/recoger_pescar_izquierda/position = Vector2( 168.333, 235.588 )
-transitions = [ "RESET", "idle", SubResource( 24 ), "RESET", "caminar_arriba", SubResource( 25 ), "RESET", "caminar_abajo", SubResource( 26 ), "RESET", "caminar_izquierda", SubResource( 27 ), "RESET", "caminar_derecha", SubResource( 28 ), "RESET", "pescar_derecha", SubResource( 29 ), "RESET", "pescar_izquierda", SubResource( 30 ), "RESET", "pescar_abajo", SubResource( 31 ), "RESET", "pescar_arriba", SubResource( 32 ), "idle", "RESET", SubResource( 33 ), "caminar_arriba", "RESET", SubResource( 34 ), "caminar_abajo", "RESET", SubResource( 35 ), "caminar_izquierda", "RESET", SubResource( 36 ), "caminar_derecha", "RESET", SubResource( 37 ), "pescar_derecha", "RESET", SubResource( 38 ), "pescar_izquierda", "RESET", SubResource( 39 ), "pescar_abajo", "RESET", SubResource( 40 ), "pescar_abajo", "recoger_pescar_abajo", SubResource( 43 ), "recoger_pescar_abajo", "RESET", SubResource( 44 ), "pescar_arriba", "recoger_pescar_arriba", SubResource( 51 ), "recoger_pescar_arriba", "RESET", SubResource( 52 ), "pescar_izquierda", "recoger_pescar_izquierda", SubResource( 53 ), "recoger_pescar_izquierda", "RESET", SubResource( 54 ), "pescar_derecha", "recoger_pescar_derecha", SubResource( 56 ), "recoger_pescar_derecha", "RESET", SubResource( 57 ), "RESET", "error_pesca", SubResource( 61 ), "error_pesca", "RESET", SubResource( 62 ), "RESET", "pesca_exitosa", SubResource( 65 ), "pesca_exitosa", "RESET", SubResource( 66 ) ]
+transitions = [ "RESET", "idle", SubResource( 24 ), "RESET", "caminar_arriba", SubResource( 25 ), "RESET", "caminar_abajo", SubResource( 26 ), "RESET", "caminar_izquierda", SubResource( 27 ), "RESET", "caminar_derecha", SubResource( 28 ), "RESET", "pescar_derecha", SubResource( 29 ), "RESET", "pescar_izquierda", SubResource( 30 ), "RESET", "pescar_abajo", SubResource( 31 ), "RESET", "pescar_arriba", SubResource( 32 ), "idle", "RESET", SubResource( 33 ), "caminar_arriba", "RESET", SubResource( 34 ), "caminar_abajo", "RESET", SubResource( 35 ), "caminar_izquierda", "RESET", SubResource( 36 ), "caminar_derecha", "RESET", SubResource( 37 ), "pescar_derecha", "RESET", SubResource( 38 ), "pescar_izquierda", "RESET", SubResource( 39 ), "pescar_abajo", "RESET", SubResource( 40 ), "pescar_abajo", "recoger_pescar_abajo", SubResource( 43 ), "recoger_pescar_abajo", "RESET", SubResource( 44 ), "pescar_arriba", "recoger_pescar_arriba", SubResource( 51 ), "recoger_pescar_arriba", "RESET", SubResource( 52 ), "pescar_izquierda", "recoger_pescar_izquierda", SubResource( 53 ), "recoger_pescar_izquierda", "RESET", SubResource( 54 ), "pescar_derecha", "recoger_pescar_derecha", SubResource( 56 ), "recoger_pescar_derecha", "RESET", SubResource( 57 ), "RESET", "error_pesca", SubResource( 61 ), "error_pesca", "RESET", SubResource( 62 ), "pescar_arriba", "pescar_arriba_exitosa", SubResource( 74 ), "pescar_arriba_exitosa", "recoger_pescar_arriba", SubResource( 75 ), "pescar_abajo", "pescar_abajo_exitosa", SubResource( 76 ), "pescar_abajo_exitosa", "recoger_pescar_abajo", SubResource( 77 ), "pescar_izquierda", "pescar_izquierda_exitosa", SubResource( 78 ), "pescar_izquierda_exitosa", "recoger_pescar_izquierda", SubResource( 79 ), "pescar_derecha", "pescar_derecha_exitosa", SubResource( 80 ), "pescar_derecha_exitosa", "recoger_pescar_derecha", SubResource( 81 ) ]
 start_node = "RESET"
-graph_offset = Vector2( -47, -71.4115 )
+graph_offset = Vector2( -342, -147.411 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=3]
 
@@ -697,10 +1003,10 @@ vframes = 10
 
 [node name="emoticonos" type="Sprite" parent="personaje"]
 visible = false
-position = Vector2( 10, -9 )
+position = Vector2( 8, -14 )
 texture = ExtResource( 3 )
 hframes = 5
-vframes = 6
+vframes = 7
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -716,11 +1022,14 @@ anims/caminar_derecha = SubResource( 7 )
 anims/caminar_izquierda = SubResource( 8 )
 anims/error_pesca = SubResource( 59 )
 anims/idle = SubResource( 10 )
-anims/pesca_exitosa = SubResource( 63 )
 anims/pescar_abajo = SubResource( 9 )
+anims/pescar_abajo_exitosa = SubResource( 63 )
 anims/pescar_arriba = SubResource( 11 )
+anims/pescar_arriba_exitosa = SubResource( 67 )
 anims/pescar_derecha = SubResource( 12 )
+anims/pescar_derecha_exitosa = SubResource( 68 )
 anims/pescar_izquierda = SubResource( 13 )
+anims/pescar_izquierda_exitosa = SubResource( 69 )
 anims/recoger_pescar_abajo = SubResource( 41 )
 anims/recoger_pescar_arriba = SubResource( 46 )
 anims/recoger_pescar_derecha = SubResource( 45 )
@@ -758,5 +1067,9 @@ one_way_collision_margin = 0.0
 [node name="tiempo_espera" type="Timer" parent="."]
 wait_time = 5.0
 
+[node name="tiempo_captura" type="Timer" parent="."]
+wait_time = 0.9
+
 [connection signal="body_entered" from="Position2D/fish" to="." method="_on_fish_body_entered"]
 [connection signal="timeout" from="tiempo_espera" to="." method="_on_tiempo_espera_timeout"]
+[connection signal="timeout" from="tiempo_captura" to="." method="_on_tiempo_captura_timeout"]
